@@ -1,6 +1,16 @@
-console.log('Prueba');
+import express, { type Application, type Request, type Response } from 'express'
 
-const prueba1 = 'Prueba_1';
-const PRUEBA_2 = 'Prueba_2';
+const app: Application = express()
 
-console.log(prueba1, PRUEBA_2);
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
+app.get('/', (req: Request, res: Response) => {
+  res.send('TS App is Running')
+})
+
+const PORT = process.env.PORT ?? 3000
+
+app.listen(PORT, () => {
+  console.log(`server is running on PORT ${PORT}`)
+})
