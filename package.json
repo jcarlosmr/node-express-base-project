@@ -5,10 +5,12 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint --ext .tsx,.ts,.js,.jsx --fix ./src -c .eslintrc",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.8.0",
@@ -17,7 +19,11 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
     "prettier": "^2.8.7",
     "typescript": "*"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": ["yarn lint"]
   }
 }
