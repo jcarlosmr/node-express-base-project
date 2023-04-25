@@ -3,13 +3,25 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["standard-with-typescript", "eslint-config-prettier"],
-  "plugins": ["import"],
+  "extends": ["standard-with-typescript", "eslint-config-prettier", "plugin:security/recommended"],
+  "plugins": ["import", "unused-imports"],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module",
     "project": ["tsconfig.json"]
   },
-  "rules": {}
+  "rules": {
+    "no-unused-vars": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
 }
