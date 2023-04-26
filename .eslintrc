@@ -3,8 +3,13 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["standard-with-typescript", "eslint-config-prettier", "plugin:security/recommended"],
-  "plugins": ["import", "unused-imports"],
+  "extends": [
+    "standard-with-typescript",
+    "eslint-config-prettier",
+    "plugin:security/recommended",
+    "plugin:sonarjs/recommended"
+  ],
+  "plugins": ["import", "unused-imports", "sonarjs"],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
