@@ -1,17 +1,17 @@
 {
   "name": "config-project-example",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "server.js",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/index.js",
-    "start:dev": "nodemon src/index.ts",
+    "start": "node dist/server.js",
+    "start:dev": "nodemon src/server.ts",
     "clean": "rimraf dist",
     "lint": "eslint --ext .tsx,.ts,.js,.jsx --fix ./src -c .eslintrc",
     "format": "prettier --write .",
     "prepare": "husky install",
-    "build": "yarn clean && yarn lint && yarn format && tsc -p . && tsc-alias",
-    "postinstall": "yarn prepare"
+    "build": "pnpm clean && pnpm lint && pnpm format && tsc -p . && tsc-alias",
+    "postinstall": "pnpm prepare"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.1",
@@ -19,7 +19,6 @@
     "@types/compression": "^1.7.2",
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.17",
-    "@types/helmet": "^4.0.0",
     "@types/node": "^18.15.12",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.59.1",
@@ -43,8 +42,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
-      "yarn lint",
-      "yarn format"
+      "pnpm lint",
+      "pnpm format"
     ]
   },
   "dependencies": {
