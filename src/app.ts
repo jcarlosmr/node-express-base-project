@@ -21,10 +21,9 @@ app.use(nocache())
 app.use(cors())
 
 // Routes
+app.get('/', (req, res) => {
+  res.status(204).send('Moved to /api/v1')
+})
 app.use('/api/v1', indexRoute)
 
-const PORT = process.env.PORT ?? 3000
-
-app.listen(PORT, () => {
-  console.log(`server is running on PORT ${PORT}`)
-})
+export default app
