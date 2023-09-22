@@ -2,28 +2,28 @@
 
 Este paper describe los pasos a seguir para configurar un proyecto con NodeJS+Typescript (se asúme que ya se tiene onstalado NodeJs y el proyecto estará optimizado para el desarrollo con VSCode) con soporte para:
 
-* [Eslint](https://eslint.org/): Paquete utilizado para verificar el estilo de cósigo sigioendo las u conjunto de reglas, en este caso standard-typescript
-* [Typescript](https://www.typescriptlang.org/): Superset de javascript
-* [ExpressJS](https://expressjs.com): Framework para desarrollo de API Rest/Web Apps
-* [Commit Lint](https://commitlint.js.org/#/): Paquete utilizado para verificar las reglas de [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) a los Mensajes de los commits
-* [Prettier](https://prettier.io/): Paquete utilizado, en conjunto con eslint, para formatear cósigo siguiendo un conjunto de reglas
-* lint-staged: Con este paquete se logra ejecutar scripts tales como lint y format unicamente a los archivos, en un repositorio git, que se encuentren en staged.
-* [HuskyJS](https://typicode.github.io/husky/#/): este paquete permite la habilitación de git hooks los cuales se integran con NodeJS (package.json) y que dan la posibilidad de implementar procesos de revición de código (eslint, prettier, commitlint, lint-staged) antes de ejecutar comandos de git tales como `git commit`, `git push`, entre otros.
+- [Eslint](https://eslint.org/): Paquete utilizado para verificar el estilo de cósigo sigioendo las u conjunto de reglas, en este caso standard-typescript
+- [Typescript](https://www.typescriptlang.org/): Superset de javascript
+- [ExpressJS](https://expressjs.com): Framework para desarrollo de API Rest/Web Apps
+- [Commit Lint](https://commitlint.js.org/#/): Paquete utilizado para verificar las reglas de [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) a los Mensajes de los commits
+- [Prettier](https://prettier.io/): Paquete utilizado, en conjunto con eslint, para formatear cósigo siguiendo un conjunto de reglas
+- lint-staged: Con este paquete se logra ejecutar scripts tales como lint y format unicamente a los archivos, en un repositorio git, que se encuentren en staged.
+- [HuskyJS](https://typicode.github.io/husky/#/): este paquete permite la habilitación de git hooks los cuales se integran con NodeJS (package.json) y que dan la posibilidad de implementar procesos de revición de código (eslint, prettier, commitlint, lint-staged) antes de ejecutar comandos de git tales como `git commit`, `git push`, entre otros.
 
 ## Entorno de desarrollo
 
-* [NodeJS](https://nodejs.org/en) es un entorno de ejecución de javascript y que con algunos plugins puede ejecutar aplicaciones desarrolladas en typescipts (solo para entornos de desarrollo).
-* npm y yarn : estos son conocidos como manejadores de paquetes para NodeJs. Estos permiten gestionar los paquetes en nuestro proyecto. En el caso de este proyecto usaremos yarn. cabe destacar que npm viene instalado por defecto en Node y para instalar yarn, basta con ejecutar `npm i -g yarn`.
-* Visual Studio Code: Editor de código por excelencia para proyectos Javascript/Typescript. Es importanme mensionar que es necesario tener instalacos, como minimo, las siguientes extensiones:
-    - [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-    - [prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-    - [conventional commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
-    - [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
-    - [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
-    - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
-    - [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
-    - [Git Blame](https://marketplace.visualstudio.com/items?itemName=waderyan.gitblame)
-    - [Auto Import](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)
+- [NodeJS](https://nodejs.org/en) es un entorno de ejecución de javascript y que con algunos plugins puede ejecutar aplicaciones desarrolladas en typescipts (solo para entornos de desarrollo).
+- npm y yarn : estos son conocidos como manejadores de paquetes para NodeJs. Estos permiten gestionar los paquetes en nuestro proyecto. En el caso de este proyecto usaremos yarn. cabe destacar que npm viene instalado por defecto en Node y para instalar yarn, basta con ejecutar `npm i -g yarn`.
+- Visual Studio Code: Editor de código por excelencia para proyectos Javascript/Typescript. Es importanme mensionar que es necesario tener instalacos, como minimo, las siguientes extensiones:
+  - [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+  - [prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+  - [conventional commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
+  - [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
+  - [JavaScript (ES6) code snippets](https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets)
+  - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+  - [GitLens — Git supercharged](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+  - [Git Blame](https://marketplace.visualstudio.com/items?itemName=waderyan.gitblame)
+  - [Auto Import](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)
 
 ## Inicialización de un proyecto NodeJS+Typescript
 
@@ -80,7 +80,7 @@ Como aplaratoria, seccin que se muestra a continuzación se configuran aliases p
       "@Entities/*": ["entities/*"],
       "@Dtos/*": ["dtos/*"],
       "@Utils/*": ["utils/*"]
-    } 
+    }
 ```
 
 ## Paquetes de NOdeJS
@@ -104,7 +104,7 @@ Lusgo de realizar la instalación de los paquetes anteriores, será necesario re
 
 ## Configuración de lint-staged
 
-Lint stage es un paquete que nos ayuda  a realiar una revisión y formateo de codigo al momento de realizar un commit en el repo. A diferencia del script lint, lint-staged aplica comandos o script unicamente a archivos marcados en el staged de git (`git status`)
+Lint stage es un paquete que nos ayuda a realiar una revisión y formateo de codigo al momento de realizar un commit en el repo. A diferencia del script lint, lint-staged aplica comandos o script unicamente a archivos marcados en el staged de git (`git status`)
 
 Para ello debemos agregar la seccion lint-staged configurado en el archivo package.json
 
@@ -204,10 +204,10 @@ ESlint tiene un plugin que permite agregar un conjunto de reglas adicionales que
   "rules": {}
 }
 ```
+
 ## Configuración de ESLint - Agregando manejo de imports
 
 En VSCode existe la posibilidad mediante extensiones, manejar los imports de forma automática, pero con la ayuda de ESLint se puede potenciar aún más con solo agregar `imports` y `unused-imports` en la propiedad plugins
-
 
 ```json
 {
@@ -228,7 +228,6 @@ En VSCode existe la posibilidad mediante extensiones, manejar los imports de for
 ```
 
 Para finalizar la configuración del manejo de los imports, es necesario implementar algunas reglas para manejar las variables declaradas y que no se estén usando agregando lo siguiente en la propiedad `rules`
-
 
 ```json
 {
@@ -289,6 +288,7 @@ Husky permite configurar git hooks dentro del proyecto. Estos hooks se ejecutara
 - pre-commit: este hook se ejecuta justo antes de resolver el commit, lo que nos permite realizar operaciones justo antes de realizarlo, para este caso se invoca el script lint-staged creado en el archivo package.json. su contenido es el siguiente:
 
 Archivo .husky/pre-commit
+
 ```bash
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
@@ -299,6 +299,7 @@ yarn lint-staged
 - commit-msg: Este hook, analiza la estructura del mensage del commit para verficar que cumpla con el formato de conventiona commits usando el paquete `commitlint`, su contenido es siguiente:
 
 Archivo .husky/commit-msg
+
 ```bash
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
@@ -332,6 +333,7 @@ El archivo de configuración `nodemon.json` se ubica en el raía del proyecto y 
   "exec": "ts-node -r tsconfig-paths/register --transpile-only"
 }
 ```
+
 El soporte para type script se implementa con el paquete ts-node como se puede ver en la propiedad exec
 
 Con la opcion `-r tsconfig-paths/register` agregamos el soporte para que nodemon pueda enterder los path alias creados previamente enl a configuración del archivo tsconfig.json.
@@ -339,6 +341,7 @@ Con la opcion `-r tsconfig-paths/register` agregamos el soporte para que nodemon
 ## Configuración de scripts en el package.json
 
 Los script del pachaje.json permiten crear alias de comandos que deben ejecutarse, tales como:
+
 - start: Iniciar la aplicación en producción
 - start:dev: Iniciar la ekecución en modo desarrollo
 - lint: Ejecutar el linter, en este caso eslint
@@ -424,6 +427,7 @@ build/
 package-lock.json
 yarn.lock
 ```
+
 ### Configuraciones propias del VSCode
 
 Las configuraciones siguientes permitiran que se aplique el formato de los achivos deseados al momento que guardar los cambios realizados en los archivos. VSCode aplicará estas reglas de forma automática.
